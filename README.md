@@ -247,12 +247,3 @@ php -S localhost:8000 -t public/
 
 ```bash
 git clone https://github.com/your-username/task-manager-api.git
-cd task-manager-api
-
-
-
-
-
-
-
-# task-manager-api
