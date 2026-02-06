@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: task_manager_api
+      MYSQL_USER: symfony_user
+      MYSQL_PASSWORD: symfony_pass
+    ports:
+    - "3307:3306"        
+    volumes:
+    - mysql_data:/var/lib/mysql
+    networks:
+    - test_demo_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: symfony_user
+      PMA_PASSWORD: symfony_pass
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    networks:
+    - test_demo_network
+
+volumes:
+  mysql_data:
+
+networks:
+  test_demo_network:
+    driver: bridge
