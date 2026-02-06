@@ -2,12 +2,6 @@
 
 A simple REST API for managing tasks built with Symfony and API Platform.
 
-## Prerequisites
-
-- Docker & Docker Compose
-- PHP 8.2+
-- Composer
-
 ## Setup Instructions
 
 ### 1. Install Symfony locally
