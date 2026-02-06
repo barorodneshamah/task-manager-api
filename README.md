@@ -211,7 +211,7 @@ php -S localhost:8000 -t public/
 ## Using API Platform Interface
 
 1. Open http://127.0.0.1:8000/api in your browser
-2. Click on any endpoint (e.g. POST,GET,PUT,DELETE)
+2. Click on any endpoint POST,GET,PUT,DELETE (e.g. POST)
 3. Click "Try it out"
 4. Enter your data and click "Execute"
 
@@ -220,8 +220,8 @@ php -S localhost:8000 -t public/
 **Request:**
 ```json
 {
-  "title": "Complete project documentation",
-  "description": "Write comprehensive README and setup guides"
+  "title": "Test",
+  "description": "Sample ra ni siya"
 }
 ```
 
@@ -232,14 +232,14 @@ php -S localhost:8000 -t public/
   "@id": "/api/tasks/1",
   "@type": "Task",
   "id": 1,
-  "title": "Complete project documentation",
-  "description": "Write comprehensive README and setup guides",
-  "isCompleted": false,
+  "title": "Test",
+  "description": "Sample ra ni siya",
+  "isCompleted": true,
   "createdAt": "2026-02-06T07:09:30+00:00"
 }
 ```
 
-### Example: Mark Task as Completed (PATCH)
+### Example: Mark Task as Completed
 
 **Request:**
 ```json
@@ -248,27 +248,7 @@ php -S localhost:8000 -t public/
 }
 ```
 
-### Using cURL
-```bash
-# Create a task
-curl -X POST http://127.0.0.1:8000/api/tasks \
-  -H "Content-Type: application/json" \
-  -d '{"title":"My First Task","description":"Testing the API"}'
 
-# Get all tasks
-curl http://127.0.0.1:8000/api/tasks
-
-# Get a specific task
-curl http://127.0.0.1:8000/api/tasks/1
-
-# Update a task
-curl -X PATCH http://127.0.0.1:8000/api/tasks/1 \
-  -H "Content-Type: application/merge-patch+json" \
-  -d '{"isCompleted":true}'
-
-# Delete a task
-curl -X DELETE http://127.0.0.1:8000/api/tasks/1
-```
 ### 8. Clone the Repository for Github
 
 ```bash
